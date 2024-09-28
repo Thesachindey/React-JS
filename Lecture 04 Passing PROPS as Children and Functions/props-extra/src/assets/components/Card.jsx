@@ -1,12 +1,13 @@
 import React from 'react'
+import "./Card.css"
 
-const Navbar = (props) => {
+const Card = (props) => {
   return (
     <div>
-      <div>This is Nav Bar</div>
+      {props.name}
       {props.children}
     </div>
   )
 }
 
-export default Navbar
+export default Card
