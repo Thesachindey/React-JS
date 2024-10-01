@@ -1,34 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [Count, setCount] = useState(0);
 
+  //first -> side-effect function
+  //second -> clean-up function
+  //third -> comma separated dependenci list; 
+
+  //useEffect()->hook-yr onyk gulo variation roycy.
+
+  //Variation:1
+  //runs on every render
+  useEffect(() => {
+    alert("I will run on each render")
+  })
+
+  function handaleClick() {
+    setCount(Count + 1);
+  }
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <h2>The count is: {Count}</h2>
+      <button onClick={handaleClick}>
+        Click Me
+      </button>
+
+    </div>
   )
 }
 
