@@ -44,7 +44,7 @@ function App() {
 useEffect(() => {
   alert("New count is updated")
 
-  // CleanUp Function 
+  // CleanUp Function. NOTE:Selected Component / selected State soraly/(Unmount-korly) CleanUp function kaj Kory.
   return () => {
    alert("Old count is unmounted from UI")
   }
