@@ -1,0 +1,21 @@
+#navbar ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: beige;
+
+}
+
+ul li {
+    list-style: none;
+    padding: 20px;
+
+}
+
+.link{
+    text-decoration: none;
+}
+.active-link {
+    border: 2px solid black;
+    text-decoration: none;
+}
