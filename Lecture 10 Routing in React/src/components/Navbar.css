@@ -1,4 +1,4 @@
-#navbar ul {
+nav {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -6,16 +6,15 @@
 
 }
 
-ul li {
+ li {
     list-style: none;
     padding: 20px;
-
 }
 
-.link{
+a{
     text-decoration: none;
+    
 }
 .active-link {
     border: 2px solid black;
-    text-decoration: none;
 }

@@ -5,23 +5,23 @@ import './Navbar.css'
 const Navbar = () => {
     return (
         <div id='navbar'>
-            <ul>
-                <li>
+            <nav>
+               
                     <NavLink to="/" className={( {isActive} ) => isActive ? "active-link" : "link"} >
-                        Home
+                        <li> Home</li>
                     </NavLink>
-                </li>
-                <li>
+                
+               
                     <NavLink to="/about" className={({ isActive }) => isActive ? "active-link" : "link"} >
-                        About
+                        <li> About</li>
                     </NavLink>
-                </li>
-                <li>
+                
+               
                     <NavLink to="/dashboard" className={({ isActive }) => isActive ? "active-link" : "link"} >
-                        Dashboard
+                        <li> Dashboard</li>
                     </NavLink>
-                </li>
-            </ul>
+                
+            </nav>
         </div>
     )
 }

@@ -6,33 +6,68 @@ import Home from './components/Home'
 import About from './components/About'
 import Dashboard from './components/Dashboard'
 import Navbar from './components/Navbar'
+import User from './components/User'
+import Courses from './components/Courses'
+import MockTest from './components/MockTest'
+import Reports from './components/Reports'
+import Notfound from './components/NotFound'
 
 const router = createBrowserRouter(
   [
     {
-      path: "/", element:
-        <div>
+      path: "/",
+      element:
+        <>
           <Navbar />
           <Home />
-        </div>
+        </>
 
     },
     {
-      path: "/about", element: 
-      <div>
-        <Navbar />
-        <About />
-      </div>
+      path: "/about",
+      element:
+        <>
+          <Navbar />
+          <About />
+        </>
 
     },
     {
-      path: "/dashboard", element: 
-      <div>
-        <Navbar />
-        <Dashboard />
-      </div>
+      path: "/dashboard",
+      element:
+        <>
+          <Navbar />
+          <Dashboard />
+        </>,
+      children: [
+        {
+          path: 'courses',
+          element: <Courses />
+        },
+        {
+          path: 'mock-test',
+          element: <MockTest />
+        },
+        {
+          path: 'reports',
+          element: <Reports />
 
+        },
+
+      ]
     },
+    {
+      path: "/user/:user",
+      element:
+        <>
+          <Navbar />
+          <User />
+        </>
+    },
+    {
+      path:'*',
+      element:<Notfound/>
+    }
 
   ]
 )
@@ -48,5 +83,5 @@ function App() {
 
 export default App
 
-//34:21
+//27:21
 
