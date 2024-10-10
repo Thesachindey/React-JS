@@ -6,10 +6,12 @@ function App() {
     register,
     handleSubmit,
     watch,
-    formState: { errors },
+    formState: { errors , isSubmitting,isDirty,isSubmitted,isValid},
   } = useForm();
 
-  function onSubmit(data) {
+ async function onSubmit(data) {
+  //api call sumulate
+  await new Promise((resolve)=>setTimeout(resolve, 5000))
     console.log("Submiting the from", data);
   }
 
@@ -66,7 +68,7 @@ function App() {
         <br />
 
         <div>
-          <button type='submit'>Submit</button>
+          <button type='submit' disabled={isSubmitting || !isDirty || !isValid ||isSubmitted } >{isSubmitting?"Submitting":"Submit"}</button>
         </div>
 
       </form>
