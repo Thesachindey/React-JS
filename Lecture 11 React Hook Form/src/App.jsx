@@ -6,12 +6,12 @@ function App() {
     register,
     handleSubmit,
     watch,
-    formState: { errors , isSubmitting,isDirty,isSubmitted,isValid},
+    formState: { errors, isSubmitting, isDirty, isSubmitted, isValid },
   } = useForm();
 
- async function onSubmit(data) {
-  //api call sumulate
-  await new Promise((resolve)=>setTimeout(resolve, 5000))
+  async function onSubmit(data) {
+    //api call sumulate
+    await new Promise((resolve) => setTimeout(resolve, 5000))
     console.log("Submiting the from", data);
   }
 
@@ -46,12 +46,12 @@ function App() {
           <label>Last Name: </label>
           <input className={errors.lastName ? 'iput-error' : ""}
             {...register("lastName",
-            {
-              required:{value:true, message:'Add LastName'}
+              {
+                required: { value: true, message: 'Add LastName' }
 
-            })} />
-            <span style={{ color: 'red' }}> *</span>
-            {errors.lastName && <p className='error-msg'>{errors.lastName.message}</p>}
+              })} />
+          <span style={{ color: 'red' }}> *</span>
+          {errors.lastName && <p className='error-msg'>{errors.lastName.message}</p>}
         </div>
 
         <div>
@@ -68,7 +68,9 @@ function App() {
         <br />
 
         <div>
-          <button type='submit' disabled={isSubmitting || !isDirty || !isValid ||isSubmitted } >{isSubmitting?"Submitting":"Submit"}</button>
+          <button type='submit' disabled={isSubmitting || !isDirty || !isValid || isSubmitted} >
+            {isSubmitting ? "Submitting" : "Submit"}
+          </button>
         </div>
 
       </form>
